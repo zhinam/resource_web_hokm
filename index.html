@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <link rel="stylesheet" href="css/hokm/style.css">
+    
+</head>
+<body>
+
+    <div class="background"></div>
+    <h1>HOKM</h1>
+    <p>The Traditional Persian Card Game</p>
+
+    <div class="container" onclick="toggleExpand()">
+        <a href="intro.html" class="card">
+            <img src="images/d-ace.png" alt="Image 1">
+            <span class="card-title">Ace of Diamonds</span>
+            <div class="card-text">This is the intro to Hokm.</div>
+        </a>
+        <a href="page2.html" class="card">
+            <img src="images/g-ace.png" alt="Image 2">
+            <span class="card-title">Ace of Clubs</span>
+            <div class="card-text">Rules of the Game</div>
+        </a>
+        <a href="page3.html" class="card">
+            <img src="images/l-ace.png" alt="Image 3">
+            <span class="card-title">Ace of Hearts</span>
+            <div class="card-text">Player Strategies</div>
+        </a>
+        <a href="page4.html" class="card">
+            <img src="images/p-ace.png" alt="Image 4">
+            <span class="card-title">Ace of Spades</span>
+            <div class="card-text">Cultural Context</div>
+        </a>
+        
+    </div>
+
+    <script>
+        function toggleExpand() {
+            document.querySelector('.container').classList.toggle('expanded');
+        }
+    </script>
+
+</body>
+</html>
