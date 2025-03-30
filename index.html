@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First HTML Page</title>
-    <link rel="stylesheet" href="css/hokm/style.css">
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
+    <script>
+        function toggleExpand() {
+          document.querySelector('.container').classList.toggle('expanded');
+        }
+      </script>      
 
     <div class="background"></div>
     <h1>HOKM</h1>
@@ -36,12 +41,5 @@
         </a>
         
     </div>
-
-    <script>
-        function toggleExpand() {
-            document.querySelector('.container').classList.toggle('expanded');
-        }
-    </script>
-
 </body>
 </html>
