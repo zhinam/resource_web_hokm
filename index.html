@@ -4,42 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First HTML Page</title>
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <script>
-        function toggleExpand() {
-          document.querySelector('.container').classList.toggle('expanded');
-        }
-      </script>      
-
     <div class="background"></div>
     <h1>HOKM</h1>
     <p>The Traditional Persian Card Game</p>
 
     <div class="container" onclick="toggleExpand()">
         <a href="intro.html" class="card">
-            <img src="images/d-ace.png" alt="Image 1">
-            <span class="card-title">Ace of Diamonds</span>
-            <div class="card-text">This is the intro to Hokm.</div>
+            <img src="images/d-ace.png" alt="Diamond Ace Card">
+            <span class="card-title">Players and Cards hokm and haakem objective</span>
+            <div class="card-text">Intro</div>
         </a>
-        <a href="page2.html" class="card">
-            <img src="images/g-ace.png" alt="Image 2">
-            <span class="card-title">Ace of Clubs</span>
+        <a href="rules.html" class="card">
+            <img src="images/g-ace.png" alt="Gold Ace Card">
+            <span class="card-title">4 players 3 players 2 players</span>
             <div class="card-text">Rules of the Game</div>
         </a>
-        <a href="page3.html" class="card">
-            <img src="images/l-ace.png" alt="Image 3">
+        <a href="strategies and tips.html" class="card">
+            <img src="images/l-ace.png" alt="Heart Ace Card">
             <span class="card-title">Ace of Hearts</span>
             <div class="card-text">Player Strategies</div>
         </a>
-        <a href="page4.html" class="card">
-            <img src="images/p-ace.png" alt="Image 4">
-            <span class="card-title">Ace of Spades</span>
-            <div class="card-text">Cultural Context</div>
+        <a href="about.html" class="card">
+            <img src="images/p-ace.png" alt="Spade Ace Card">
+            <span class="card-title">About Hokm</span>
+            <div class="card-text">About</div>
         </a>
-        
     </div>
 </body>
 </html>

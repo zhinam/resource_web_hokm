@@ -1,0 +1,18 @@
+/* General styles for all pages */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styles only for intro.html */
+  .intro-page {
+    background-color: #a50000;
+    color: white;
+  }
+  
+  /* Styles only for rules page (page2.html) */
+  .rules-page {
+    background-color: #ffffff;
+    color: black;
+  }
+  
