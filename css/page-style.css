@@ -2,17 +2,212 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-  }
-  
-  /* Styles only for intro.html */
-  .intro-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles only for intro.html */
+.intro-page {
     background-color: #a50000;
     color: white;
-  }
-  
-  /* Styles only for rules page (page2.html) */
-  .rules-page {
-    background-color: #ffffff;
+}
+
+/* Styles only for rules page */
+.rules-page {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.rules-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/menu.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Add a dark overlay */
+.rules-page::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.block {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+h2 {
+    color: #FFD700;
+    font-family: 'Righteous', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+    color: white;
+}
+
+/* Player selection page styles */
+.main-title {
+    font-family: 'Righteous', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin: 2rem 0 0.5rem 0;  /* Reduced bottom margin */
+}
+
+.info-text {
+    color: #FFD700;  /* Gold color to match headings */
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0 0 2rem 0;
+    font-style: italic;
+}
+
+.players-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 1400px;  /* Increased max-width to accommodate larger cards */
+}
+
+.player-section {
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.player-section:hover {
+    transform: scale(1.1);
+}
+
+.player-cards {
+    width: 220px;  /* Increased from 180px */
+    height: auto;
+    display: block;
+}
+
+/* Default number styling */
+.number {
+    position: absolute;
+    font-family: 'Righteous', sans-serif;
+    font-size: 5rem;  /* Increased from 4rem */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Specific positioning for each number */
+.player-section:nth-child(1) .number {
+    left: -25px;  /* Adjusted for larger number */
+    top: -25px;
+}
+
+.player-section:nth-child(2) .number {
+    left: -15px;  /* Adjusted for larger number */
+    top: -20px;
+}
+
+.player-section:nth-child(3) .number {
+    left: -15px;  /* Adjusted for larger number */
+    top: -20px;
+}
+
+.qa-section {
+    padding: 20px;
+    margin: 20px;
+    max-width: 800px;
+}
+
+.question {
+    color: #FFD700;
+    font-family: 'Righteous', sans-serif;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.answer {
+    color: white;
+    line-height: 1.6;
+    margin: 1rem 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Add styling for ordered lists */
+ol.answer {
+    color: white;
+    line-height: 1.6;
+    margin: 1rem auto;
+    padding-left: 2rem;
+    max-width: 600px;
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+ol.answer li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+ul {
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
     color: black;
-  }
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Righteous', sans-serif;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
   

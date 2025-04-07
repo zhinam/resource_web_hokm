@@ -83,7 +83,6 @@
         .card-title, .card-text {
             display: none;
             position: absolute;
-            color: white;
             text-align: center;
             padding: 5px 10px;
             border-radius: 5px;
@@ -100,6 +99,7 @@
             font-weight: bold;
             width: 90%;
             padding: 10px;
+            color: #FFD700;  /* Gold color matching rules page */
         }
 
         .card-text {
@@ -110,29 +110,24 @@
             max-width: 90%;
             padding: 15px;
             letter-spacing: 0.5px;
+            color: white;
         }
 
         /* Show on expand */
         .expanded .card-title,
         .expanded .card-text {
             display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .expanded .card {
-            pointer-events: auto;}
-   /* Hover effect only in expanded */
-   .expanded .card:hover {
-    transform: scale(1.55) translateY(-10px) rotate(1deg);
-    z-index: 2;
-}
+            pointer-events: auto;
+        }
 
-
+        /* Hover effect only in expanded */
+        .expanded .card:hover {
+            transform: scale(1.55) translateY(-10px) rotate(1deg);
+            z-index: 2;
+        }
 
         /* Expanded state for individual cards */
         .expanded .card:nth-child(1) { left: 0; top: 0; }
@@ -150,4 +145,11 @@ h1, h2, h3 {
   }
   
           
+      
+
+        @keyframes subtlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
       
