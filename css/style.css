@@ -37,25 +37,27 @@ h1 {
     font-style: normal;
     margin-bottom: 0%;
     margin-top: 0%;
+    font-size: 7rem;
 }
 
 p {
     color: white;
     margin-top: 0%;
+    font-size: 1.25rem;
 }
 
 .container {
     display: flex;
     position: relative;
-    width: 860px;
-    height: 300px;
+    width: 900px;
+    height: 400px;
     cursor: pointer;
     transition: all 1.5s ease-in-out;
 }
 
 .card {
-    width: 240px;
-    height: 320px;
+    width: 340px;
+    height: 420px;
     transition: all 1.5s ease-in-out;
     position: relative;
     pointer-events: none;
@@ -75,28 +77,27 @@ p {
 }
 
 /* Initial scattered placement */
-.card:nth-child(1) { top: 20px; left: 380px; transform: rotate(-10deg); }
-.card:nth-child(2) { top: 20px; left: 180px; transform: rotate(4deg); }
-.card:nth-child(3) { top: 23px; left: -15px; transform: rotate(10deg); }
-.card:nth-child(4) { top: 27px; left: -210px; transform: rotate(15deg); }
+.card:nth-child(1) { top: 10px; left: 330px; transform: rotate(-10deg); }
+.card:nth-child(2) { top: 10px; left: 130px; transform: rotate(4deg); }
+.card:nth-child(3) { top: 13px; left: -65px; transform: rotate(10deg); }
+.card:nth-child(4) { top: 17px; left: -260px; transform: rotate(15deg); }
 
 .card-title, .card-text {
     display: none;
     position: absolute;
-    color: white;
+    color: darkred;
     text-align: center;
     padding: 5px 10px;
     border-radius: 5px;
     font-family: 'Righteous', sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Positioning */
 .card-title {
-    bottom: 20px;
+    bottom: 160px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     width: 90%;
     padding: 10px;
@@ -116,10 +117,16 @@ p {
 .expanded .card-title,
 .expanded .card-text {
     display: block;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .expanded .card {
     pointer-events: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Hover effect only in expanded */
@@ -129,10 +136,10 @@ p {
 }
 
 /* Expanded state for individual cards */
-.expanded .card:nth-child(1) { left: 0; top: 0; }
-.expanded .card:nth-child(2) { left: 0; top: 0; }
-.expanded .card:nth-child(3) { left: 0; top: 0; }
-.expanded .card:nth-child(4) { left: 0; top: 0; }
+.expanded .card:nth-child(1) { left: 0; top: 0; transform: rotate(-10deg); }
+.expanded .card:nth-child(2) { left: 0; top: 0; transform: rotate(4deg); }
+.expanded .card:nth-child(3) { left: 0; top: 0; transform: rotate(10deg); }
+.expanded .card:nth-child(4) { left: 0; top: 0; transform: rotate(15deg); }
 
 /* Apply to all headings */
 h1, h2, h3 {
@@ -147,67 +154,6 @@ h1, h2, h3 {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
-}
-
-/* Mobile Responsive Styles */
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        height: auto;
-        min-height: 300px;
-        padding: 20px;
-    }
-
-    .card {
-        width: 200px;
-        height: 280px;
-    }
-
-    /* Card image for mobile */
-    .card img {
-        width: 100%;
-        height: 100%;
-    }
-
-    /* Title and text adjustments for mobile */
-    .card-title {
-        font-size: 1rem;
-        bottom: 10px;
-    }
-
-    .card-text {
-        font-size: 1.1rem;
-        padding: 10px;
-    }
-
-    /* Heading adjustments for mobile */
-    h1 {
-        font-size: 3rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-    .card {
-        width: 160px;
-        height: 220px;
-    }
-
-    .card-title {
-        font-size: 0.9rem;
-    }
-
-    .card-text {
-        font-size: 1rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
 }
   
       
