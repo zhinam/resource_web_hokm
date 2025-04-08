@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/page-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <title>3 Players Hokm Rules</title>
+    <link rel="stylesheet" href="css/page-style.css">
 </head>
-<body class="rules-page">
-    <section class="block">
-        <h2>3 Players Rules</h2>
-        <p>
-            In a 3-player game of Hokm, each player plays individually. The game follows most of the same rules as 4-player Hokm, with one key difference: there are no teams—each player plays independently for themselves.
-        </p>
-        <p>
-            At the start of the round, you need to remove one card with a rank of 2 from the deck to ensure the card count remains correct. The rest of the rules, including choosing the Hakem, selecting the Hokm, and playing each round, remain the same.
-        </p>
-    </section>
+<body>
+    <div class="rules-page rules-3players">
+        <!-- Hero section -->
+        <header class="hero-section" role="banner">
+            <div class="hero-image">
+                <img src="images/player%203.png" alt="" role="presentation">
+            </div>
+            <div class="hero-title-section">
+                <h1 class="hero-title">3 Players</h1>
+                <div class="accent-circle top-right" aria-hidden="true"></div>
+            </div>
+        </header>
 
-    <div class="qa-section">
-        <h3 class="question">How is the gameplay different in 3-player Hokm?</h3>
-        <p class="answer">The main differences are:</p>
-        <ol class="answer">
-            <li>One card (rank of 2) is removed from the deck</li>
-            <li>Players play independently, no teams</li>
-            <li>Each player competes against the other two players</li>
-            <li>All other rules remain the same as 4-player version</li>
-        </ol>
+        <!-- Main content -->
+        <main id="main-content" class="rules-content">
+            <div class="main-rules">
+                <h2>How to Play</h2>
+                <p>At the start of the round, you need to remove one card with a rank of 2 from the deck to ensure the card count remains correct.</p>
+                <p>The game is then played exactly the same way as in the 4-player version, with one key difference:</p>
+                <ul>
+                    <li>In 3-player Hokm, there are no teams—each player plays independently for themselves.</li>
+                </ul>
+                <p>The rest of the rules, including choosing the Hakem, selecting the Hokm, and playing each round, remain the same.</p>
+                <div class="accent-circle bottom-left" aria-hidden="true"></div>
+            </div>
+            <aside class="side-images" aria-label="Decorative card image">
+                <div class="side-image">
+                    <img src="images/card-1.png" alt="" role="presentation">
+                </div>
+            </aside>
+        </main>
+
+        <nav class="navigation">
+            <a href="rules.html" class="back-button">
+                <span aria-hidden="true">←</span>
+                Back to Players
+            </a>
+        </nav>
     </div>
-
-    <div class="qa-section">
-        <h3 class="question">What about the Hakem and Hokm selection?</h3>
-        <p class="answer">
-            The process for selecting the Hakem and choosing the Hokm remains exactly the same as in the 4-player version. The Hakem has the same responsibilities and privileges.
-        </p>
-    </div>
-
-    <a href="rules.html" class="back-button">Back to Player Selection</a>
 </body>
 </html> 
