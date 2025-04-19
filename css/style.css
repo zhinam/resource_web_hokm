@@ -193,7 +193,7 @@ body {
 
     /* Make card titles responsive */
     .card-title {
-        font-family:  "Courier New", monospace;
+        font-family: Courier New, monospace;
         font-size: 1.5rem;
         width: 80%;
     }
