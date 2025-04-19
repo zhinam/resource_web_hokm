@@ -1,0 +1,493 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Righteous', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(0, 0, 0);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+
+/* Specific adjustments for different page types */
+.show-nav .hero-section,
+.show-nav .block.white,
+.show-nav .main-title {
+    margin-top: 3rem;
+}
+
+/* Intro page specific spacing */
+.intro-page .main-title {
+    margin-top: 2rem;
+}
+
+.intro-page .info-text {
+    margin-top: 1rem;
+}
+
+.intro-page .players-container {
+    margin-top: 2rem;
+}
+
+.rules-page .main-title {
+    margin-top: 4rem;
+}
+
+.rules-page .info-text {
+    margin-top: 2rem;
+}
+
+.rules-page .players-container {
+    margin-top: 3rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 0.625rem;
+    z-index: 1001;
+}
+
+.hamburger-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+    display: block;
+    object-fit: contain;
+}
+
+.hamburger.active .hamburger-icon {
+    transform: rotate(90deg);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: darkred;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    font-family: "Arial Black", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link.active {
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 0px rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: rgb(0, 0, 0);
+    background-color: darkred;
+    -webkit-text-stroke: 0px rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+
+.nav-link i {
+    font-size: 1.1em;
+}
+
+/* Show navbar only on non-index pages */
+.show-nav .navbar {
+    display: flex;
+}
+
+.index-page .navbar {
+    display: none;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 48rem) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        padding: 4rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        margin: 1rem 0;
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    /* Fix card container for mobile */
+    .container {
+        width: 100%;
+        height: auto;
+        margin-top: -1rem;
+    }
+
+    /* Adjust card sizing for mobile */
+    .card {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Fix card positioning for mobile */
+    .card:nth-child(1) { top: 0; left: 0; transform: rotate(-5deg); }
+    .card:nth-child(2) { top: 0; left: 0; transform: rotate(2deg); }
+    .card:nth-child(3) { top: 0; left: 0; transform: rotate(5deg); }
+    .card:nth-child(4) { top: 0; left: 0; transform: rotate(8deg); }
+
+    /* Adjust expanded card positioning */
+    .expanded .card:nth-child(1) { left: 0; transform: rotate(-5deg); }
+    .expanded .card:nth-child(2) { left: 0; transform: rotate(2deg); }
+    .expanded .card:nth-child(3) { left: 0; transform: rotate(5deg); }
+    .expanded .card:nth-child(4) { left: 0; transform: rotate(8deg); }
+
+    /* Make card titles responsive */
+    .card-title {
+        font-size: 1.5rem;
+        width: 80%;
+    }
+
+    /* Adjust card image sizing */
+    .card img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Adjust overlay positioning */
+    .card .overlay {
+        width: 80%;
+        height: auto;
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/menu.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+img {
+    display: block;
+    padding-top: 2rem;
+    margin: auto;
+    width: 210%;
+}
+
+.main-header h1 {
+    color: white;
+    font-family: "Arial Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0;
+    margin-top: -3rem;
+    font-size: 7rem;
+    text-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
+    padding-top: 10rem;
+}
+
+.main-header p {
+    color: white;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    margin-top: -1rem;
+    font-size: 1.25rem;
+    text-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
+}
+
+/* Regular text styles */
+p, h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+/* Remove text shadow from body text */
+.main-rules p,
+.block p,
+.rules-content p {
+    text-shadow: none;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 90%;
+    max-width: 56.25rem;
+    height: 25rem;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out;
+}
+
+.card {
+    width: 21.25rem;
+    height: 26.25rem;
+    transition: all 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.card .overlay {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Specific positioning for hearts overlay */
+.card:nth-child(1) .overlay {
+    top: 54%;
+}
+
+/* Specific positioning for clubs overlay */
+.card:nth-child(2) .overlay {
+    top: 48%;
+}
+
+/* Initial scattered placement */
+.card:nth-child(1) { top: 0.625rem; left: 20.625rem; transform: rotate(-10deg); }
+.card:nth-child(2) { top: 0.625rem; left: 8.125rem; transform: rotate(4deg); }
+.card:nth-child(3) { top: 0.8125rem; left: -4.0625rem; transform: rotate(10deg); }
+.card:nth-child(4) { top: 1.0625rem; left: -16.25rem; transform: rotate(15deg); }
+
+.card-title, .card-text {
+    display: none;
+    position: absolute;
+    color: #a50000;
+    text-align: center;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+    font-family: 'courier new bold', sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Positioning */
+.card-title {
+    position: absolute;
+    z-index: 3;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    width: 90%;
+    padding: 0.625rem;
+    color: #000000;
+    text-align: center;
+    font-family: 'courier new bold', sans-serif;
+}
+
+.card-text {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    max-width: 90%;
+    padding: 0.9375rem;
+    letter-spacing: 0.03125rem;
+}
+
+/* Show on expand */
+.expanded .card-title,
+.expanded .card-text {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.expanded .card {
+    pointer-events: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Add fade out animation when not expanded */
+.card:not(.expanded) .card-title,
+.card:not(.expanded) .card-text {
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Expanded state for individual cards */
+.expanded .card:nth-child(1) { left: 0; top: 0; transform: rotate(-10deg); }
+.expanded .card:nth-child(2) { left: 0; top: 0; transform: rotate(4deg); }
+.expanded .card:nth-child(3) { left: 0; top: 0; transform: rotate(10deg); }
+.expanded .card:nth-child(4) { left: 0; top: 0; transform: rotate(15deg); }
+
+/* Hover effect for expanded cards */
+.expanded .card:hover {
+    transform: scale(1.23) translateY(-0.625rem) rotate(1deg);
+    z-index: 2;
+}
+
+.expanded .card:hover .card-title {
+    color: black;
+    background-color: transparent;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Selected card title */
+.expanded .card.active .card-title {
+    color: white;
+    background-color: #a50000;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+}
+
+/* Apply to all headings */
+h1, h2, h3 {
+    font-family: "arial black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+}
+
+@keyframes subtlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Footer styles */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link {
+    color: darkred;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-link:hover {
+    color: rgb(0, 0, 0);
+    background-color: darkred;
+    -webkit-text-stroke: 0px rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+
+.footer-email {
+    color: darkred;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Mobile responsive footer */
+@media screen and (max-width: 48rem) {
+    .footer-link, .footer-email {
+        font-size: 0.8rem;
+    }
+}
+  
+      

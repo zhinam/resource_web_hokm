@@ -1,0 +1,717 @@
+/* Base styles with improved readability */
+:root {
+    --primary-red: #a50000;
+    --text-dark: #222222;
+    --text-body: #333333;
+    --background: #f5f5f0;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--background);
+    color: var(--text-body);
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Styles only for intro.html */
+.intro-page {
+    background-color: #a50000;
+    color: white;
+}
+
+/* Styles only for rules page */
+.rules-page {
+    color: #333;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Hero section for rules pages */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 80px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.hero-image {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    filter: grayscale(0.9);
+    transition: all 0.6s ease;
+    background-color: white;
+}
+
+/* Remove specific positioning as we're using contain */
+.rules-2players .hero-image img,
+.rules-3players .hero-image img,
+.rules-4players .hero-image img {
+    object-position: center center;
+}
+
+.hero-image:hover img {
+    filter: grayscale(0);
+    transform: scale(1.02);
+}
+
+.hero-title-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+/* Adjust the overlay to be less dark */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.3) 100%
+    );
+    z-index: 1;
+}
+
+/* Rules content layout */
+.rules-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    margin: 60px 0;
+}
+
+.main-rules {
+    grid-column: 1 / 8;
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.side-images {
+    grid-column: 8 / -1;
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.side-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: all 0.6s ease;
+}
+
+.side-image:hover img {
+    filter: grayscale(0);
+    transform: scale(1.0);
+}
+
+/* Add a subtle gradient overlay */
+.side-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(0,0,0,0.2) 0%, 
+        transparent 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.side-image:hover::after {
+    opacity: 1;
+}
+
+/* Q&A section with improved layout */
+.qa-section {
+    margin: 6rem 0;
+    width: 100%;
+}
+
+.qa-title {
+    color: #a50000;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.qa-list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 60px 40px;
+}
+
+.qa-item {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.qa-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+}
+
+.qa-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.9);
+    transition: all 0.6s ease;
+}
+
+.qa-item:hover .qa-image img {
+    filter: grayscale(0);
+    transform: scale(1.03);
+}
+
+.qa-content {
+    padding-top: 20px;
+}
+
+.question {
+    font-size: 1.75rem;
+    color: var(--primary-red);
+    margin: 0 0 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.answer {
+    font-size: 1.125rem;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.answer ol {
+    padding-left: 1.25rem;
+    margin: 1rem 0;
+}
+
+.answer li {
+    margin-bottom: 1rem;
+}
+
+.answer strong {
+    color: var(--primary-red);
+}
+
+/* Add subtle dividers between Q&A items */
+.qa-item:not(:last-child) {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(165,0,0,0.1);
+}
+
+/* Red circle */
+.accent-circle {
+    position: absreolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/gol.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    mix-blend-mode: multiply;
+    opacity: 1;
+}
+
+.accent-circle.top-right {
+    top: -40px;
+    right: -40px;
+}
+
+.accent-circle.bottom-left {
+    bottom: -40px;
+    left: -40px;
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-red);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #840000;
+    transform: translateY(-2px);
+}
+
+.back-button:focus {
+    outline: 3px solid #840000;
+    outline-offset: 2px;
+}
+
+/* Player selection page styles */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 6rem;
+    color: #a50000;
+    text-align: center;
+    margin: 80px 0 40px 0;
+    padding-top: 15rem;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    padding-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+.about-text {
+    color: #000000;
+    font-family: "Courier New bold", monospace;
+    text-align: left;
+    font-size: 1.4rem; 
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.6;
+    font-weight: 500;
+    padding-top: 8rem;
+    min-height: calc(100vh - 8rem); /* Account for navbar and footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.info-text {
+    color: #333;
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 60px;
+    font-family: "Courier New bold", monospace;
+    padding-bottom: 2rem;
+}
+
+/* Modern image grid layout */
+.players-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    padding: -3rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 4rem; /* Add space between cards and footer */
+}
+
+/* Make all player sections the same size */
+.player-section:nth-child(1),
+.player-section:nth-child(2),
+.player-section:nth-child(3) {
+    grid-column: span 4;
+    aspect-ratio: 3/4;
+}
+
+.player-section {
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.player-cards {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.8s ease;
+    filter: grayscale(1);
+}
+
+/* Number styling */
+.number {
+    position: absolute;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    color: #a50000;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.4s ease;
+    right: 40px; /* All numbers positioned on the right */
+    top: 40px; /* All numbers positioned at the top */
+    font-size: 8rem; /* Same large size for all numbers */
+    transform: translateX(50px); /* All slide in from right */
+}
+
+/* Remove individual positioning and keep only hover effect */
+.player-section:hover .number {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.player-section:hover .player-cards {
+    transform: scale(1.03);
+}
+
+/* Overlay styling */
+.player-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.4) 50%, 
+        rgba(0,0,0,0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.player-section:hover .player-overlay {
+    opacity: 1;
+}
+
+
+/* Red accent circles */
+.accent-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #a50000;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+}
+
+.player-section:nth-child(1) .accent-circle {
+    top: -20px;
+    right: -20px;
+}
+
+.player-section:nth-child(2) .accent-circle {
+    bottom: -20px;
+    left: -20px;
+}
+
+.player-section:nth-child(3) .accent-circle {
+    top: -20px;
+    right: -20px;
+}
+
+/* Content grid for rules */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    margin: 60px 0;
+}
+
+.content-image {
+    grid-column: span 6;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.8);
+    transition: filter 0.4s ease;
+}
+
+.content-image:hover img {
+    filter: grayscale(0);
+}
+
+.content-text {
+    grid-column: span 6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Text styles */
+h2 {
+    color: #a50000;
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0 0 30px 0;
+    position: relative;
+}
+
+.question {
+    color: #a50000;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+
+.answer {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Improved text readability */
+p {
+    max-width: 70ch; /* Optimal line length for readability */
+    margin-bottom: 1.5em;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+/* Heading hierarchy and contrast */
+h1, h2, h3 {
+    color: var(--primary-red);
+    line-height: 1.2;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+/* Focus states for interactive elements */
+a:focus, button:focus {
+    outline: 3px solid var(--primary-red);
+    outline-offset: 2px;
+}
+
+/* Image accessibility */
+.hero-image img, .side-image img, .qa-image img {
+    filter: grayscale(0.9);
+    transition: filter 0.4s ease;
+}
+
+.hero-image:hover img, .side-image:hover img, .qa-image:hover img {
+    filter: grayscale(0);
+}
+
+/* Improved contrast for text on images */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0.7) 0%, 
+        rgba(0,0,0,0.4) 50%, 
+        rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+}
+
+/* Q&A section with improved readability */
+.qa-section {
+    margin: 4rem 0;
+}
+
+/* Lists with proper spacing */
+ol, ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Skip to main content link for keyboard users */
+.skip-to-main {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    padding: 1rem;
+    background-color: var(--primary-red);
+    color: white;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+    top: 0;
+    z-index: 100;
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .question {
+        font-size: 1.25rem;
+    }
+
+    p, .answer {
+        font-size: 1rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-red: #cc0000;
+        --text-dark: #000000;
+        --text-body: #000000;
+        --background: #ffffff;
+    }
+
+    .hero-image img, .side-image img, .qa-image img {
+        filter: none;
+        border: 2px solid var(--text-dark);
+    }
+}
+
+.player-strategies {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.player-strategies h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.strategy-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strategy-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.strategy-link:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.strategy-link img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    filter: grayscale(0);
+}
+
+.strategy-link:hover img {
+    transform: scale(1.05);
+}
+
+.strategy-link span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.strategy-text {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Add left alignment for all text elements */
+h1, h2, h3, h4, h5, h6, p, li, .question, .answer, .main-rules, .block, .rules-content {
+    text-align: left;
+}
+
+/* Keep navigation centered */
+.navigation {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure footer stays at bottom */
+.footer {
+    margin-top: auto;
+    padding-bottom: 0; /* Remove any padding that might cause white space */
+    margin-bottom: 0; /* Remove any margin that might cause white space */
+}
+  
